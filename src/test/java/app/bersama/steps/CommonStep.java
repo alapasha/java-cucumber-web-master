@@ -35,6 +35,6 @@ public class CommonStep {
     @Then("user logout")
     public void userLogout() {
         HomePage homePage = new HomePage(DriverManager.getInstance().getDriver());
-        homePage.userLogout();
+        homePage.userProfile();
     }
 }

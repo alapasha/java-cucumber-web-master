@@ -21,15 +21,19 @@ public class HomePage {
     private WebElement navLinkLogin;
 
 
-    //LOGOUT
+    //Profile & Logout
     @FindBy(xpath = "//*[@id=\"user\"]")
     private WebElement button_user;
+
+    @FindBy(xpath = "//*[@id=\"navbarText\"]/ul/li[3]/div/a")
+    private WebElement button_profile;
 
     @FindBy(xpath = "//*[@id=\"navbarText\"]/ul/li[3]/div/button")
     private WebElement button_logout;
 
-    public void userLogout() {
+    public void userProfile() {
         Keyword.click(button_user);
+        Keyword.click(button_profile);
         Keyword.click(button_logout);
     }
 }

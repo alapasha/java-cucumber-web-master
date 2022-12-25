@@ -7,23 +7,28 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.util.random.RandomGenerator;
+
 public class ProfileStep {
 
-    @When("user directed to profile page")
-    public void user_directed_to_profile_page() {
-        ProfilePage profilePage = new ProfilePage(DriverManager.getInstance().getDriver());
-        profilePage.userProfile();
+    String name = RandomGenerator.getRandomUserName();
+    String address = RandomGenerator.getRandomAddress();
+    String phoneNumber = RandomGenerator.getRandomPhoneNumber();
+
+    @When("user navigate to profile page {string}")
+    public void user_navigate_to_profile_page() {
+        HomePage homePage = new HomePage(DriverManager.getInstance().getDriver());
+        homePage.userProfile();
     }
 
-    @Then("fillout profile information as {string}")
-    public void fillout_profile_information_as(String string) {
+    @Then("fillout profile information")
+    public void fillout_profile_information(String string) {
         ProfilePage profilePage = new ProfilePage(DriverManager.getInstance().getDriver());
-        String name = ProfilePage.
-        String address = "Taman Yasmin Sector 3";
-        String phoneNumber = "08130909091";
+        profilePage.enterData(name,address,phoneNumber);
+        profilePage.tapButtonRegister();
     }
 
-    @Then("current url should be {string}")
+    @Then("user successfully change account information")
     public void current_url_should_be(String string) {
     }
 }
