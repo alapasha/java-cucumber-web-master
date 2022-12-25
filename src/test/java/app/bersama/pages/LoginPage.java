@@ -22,4 +22,20 @@ public class LoginPage {
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         PageFactory.initElements(webDriver, this);
     }
+
+    @FindBy(id = "exampleInputEmail1")
+    private WebElement inputEmail;
+
+    @FindBy(xpath = "//*[@id=\"exampleInputPassword1 \"] ")
+    private  WebElement inputPassword;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/form/button")
+    private WebElement button_login;
+
+    public void userLogin(String userEmail, String password) {
+        Keyword.enterText(inputEmail, userEmail);
+        Keyword.enterText(inputPassword, password);
+        Keyword.click(button_login);
+    }
+
 }
