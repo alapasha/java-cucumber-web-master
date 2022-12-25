@@ -6,3 +6,4 @@
     Given navigate to url "https://secondhand-store.herokuapp.com/login"
     * login as "kelompok1regie@gmail.com"
     When delete product
+    Then current url should be "https://secondhand-store.herokuapp.com"
