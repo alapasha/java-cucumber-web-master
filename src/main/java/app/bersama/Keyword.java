@@ -23,7 +23,7 @@ public class Keyword {
     }
 
     public static void navigateToUrl(String url) {
-        webDriver.get(url);
+        DriverManager.getInstance().getDriver().get(url);
     }
 
     public static void click(WebElement webElement) {
@@ -47,7 +47,7 @@ public class Keyword {
     }
 
     public static void waitElementToBeDisplayed(WebElement element) {
-        WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(25));
+        WebDriverWait wait = new WebDriverWait(DriverManager.getInstance().getDriver(), Duration.ofSeconds(25));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 
@@ -64,7 +64,7 @@ public class Keyword {
     }
 
     public static void assertCurrentUrl(String expectedUrl) {
-        String actualUrl = webDriver.getCurrentUrl();
+        String actualUrl = DriverManager.getInstance().getDriver().getCurrentUrl();
         Assert.assertEquals(actualUrl, expectedUrl);
     }
 
