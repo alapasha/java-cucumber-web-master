@@ -2,6 +2,7 @@ package app.bersama.steps;
 
 import app.bersama.DriverManager;
 import app.bersama.Keyword;
+import app.bersama.pages.HomePage;
 import app.bersama.pages.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -29,5 +30,11 @@ public class CommonStep {
     @Then("current url should be {string}")
     public void currentUrlShouldBe(String url) {
         Keyword.assertCurrentUrl(url);
+    }
+
+    @Then("user logout")
+    public void userLogout() {
+        HomePage homePage = new HomePage(DriverManager.getInstance().getDriver());
+        homePage.userLogout();
     }
 }

@@ -10,8 +10,8 @@ Feature: Login
 #  @logout @positive
 #  Scenario: As a user i should be able to login and logout
 #    Given navigate to url "https://secondhand-store.herokuapp.com/login"
-#    When login with valid credential
-#    Then current url should be "https://secondhand-store.herokuapp.com/"
+#    When login as "binarqae1@gmail.com"
+#    Then current url should be "https://secondhand-store.herokuapp.com/login"
 #    * user logout
 #
 #  @login @negative
