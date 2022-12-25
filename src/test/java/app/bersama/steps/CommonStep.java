@@ -21,7 +21,6 @@ public class CommonStep {
     public void login_as(String string) {
         LoginPage loginPage = new LoginPage(DriverManager.getInstance().getDriver());
         loginPage.enterCredential("raushanfiqriarya@gmail.com", "Password*1");
-        loginPage.tapButtonLogin();
     }
 
     @Then("current url should be {string}")
