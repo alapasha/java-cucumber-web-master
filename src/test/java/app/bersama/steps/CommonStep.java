@@ -19,8 +19,8 @@ public class CommonStep {
 
     @When("login as {string}")
     public void loginAs(String string) {
-        String userEmail = "binarqae1@gmail.com";
-        String password = "students1234";
+        String userEmail = "kelompok1regie@gmail.com";
+        String password = "Password*1";
 
         LoginPage loginPage = new LoginPage(DriverManager.getInstance().getDriver());
         loginPage.userLogin(userEmail, password);

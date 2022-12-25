@@ -19,7 +19,7 @@ public class HomePage {
     @FindBy(xpath = "//*[@id=\"navbarText\"]/ul/li/a")
     public static WebElement navLinkLogin;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/a")
+    @FindBy(className = "btn btn-color-theme pl-3 pr-3 button-jual")
     public static WebElement navLinkJual;
 
 }

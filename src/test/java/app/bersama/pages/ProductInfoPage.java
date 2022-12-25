@@ -15,7 +15,7 @@ public class ProductInfoPage {
 
     public ProductInfoPage(WebDriver driver) {
         this.webDriver = driver;
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
         PageFactory.initElements(webDriver, this);
     }
 
@@ -25,7 +25,7 @@ public class ProductInfoPage {
     @FindBy(id = "harga_produk")
     private WebElement inputProductPrice;
 
-    @FindBy(id = "kategori")
+    @FindBy(xpath = "//*[@id=\"kategori\"]/option[3]")
     private WebElement chooseProductCategory;
 
     @FindBy(id = "deskripsi")
