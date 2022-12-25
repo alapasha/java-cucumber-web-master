@@ -22,4 +22,6 @@ public class HomePage {
     @FindBy(className = "btn btn-color-theme pl-3 pr-3 button-jual")
     public static WebElement navLinkJual;
 
+    @FindBy(xpath = "//*[@id=\"navbarText\"]/ul/li[1]/a")
+    public static WebElement navLinkSellList;
 }

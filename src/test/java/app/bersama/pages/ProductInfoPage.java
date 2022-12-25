@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import java.time.Duration;
 
 import static app.bersama.pages.HomePage.navLinkJual;
+import static app.bersama.pages.HomePage.navLinkSellList;
+import static app.bersama.pages.SellListPage.buttonAddNewItem;
 
 public class ProductInfoPage {
     protected WebDriver webDriver;
@@ -35,7 +37,8 @@ public class ProductInfoPage {
     private WebElement buttonPublish;
 
     public void addNewItem(){
-        Keyword.click(navLinkJual);
+        Keyword.click(navLinkSellList);
+        Keyword.click(buttonAddNewItem);
     }
 
     public void fillInformationForm(String productName, String productPrice, String productDescription) {

@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
+import static app.bersama.pages.HomePage.navLinkSellList;
+
 public class SellListPage {
 
     protected WebDriver webDriver;
@@ -24,7 +26,11 @@ public class SellListPage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[3]/div[1]/div/div/button[1]")
     private WebElement buttonDelete;
 
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[3]/div[2]/div/div/a")
+    public static WebElement buttonAddNewItem;
+
     public void deleteItem(){
+        Keyword.click(navLinkSellList);
         Keyword.click(item1);
         Keyword.click(buttonDelete);
     }
