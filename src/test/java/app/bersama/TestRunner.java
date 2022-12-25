@@ -1,5 +1,9 @@
 package app.bersama;
 
+import app.bersama.pages.LoginPage;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.openqa.selenium.WebDriver;
@@ -14,14 +18,14 @@ import java.time.Duration;
  * @project java-cucumber-learning
  */
 
-@CucumberOptions(features = "src/test/java/app/bersama/features/Login.feature",
+@CucumberOptions(features = "src/test/java/app/bersama/features",
         glue = "app.bersama.steps",
         tags = "",
         plugin = {
                 "pretty",
                 "html:reports/cucumber-result/cucumber-reports.html",
                 "json:reports/cucumber-result/cucumber-reports.json"
-}, monochrome = true)
+        }, monochrome = true)
 
 public class TestRunner extends AbstractTestNGCucumberTests {
 
@@ -33,7 +37,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 
     @BeforeMethod
     public void setupBrowser() {
-        WebDriver webDriver = new BrowserFactory().launchBrowser("chrome");
+        WebDriver webDriver = new BrowserFactory().launchBrowser("headless chrome");
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         DriverManager.getInstance().setDriver(webDriver);

@@ -12,20 +12,22 @@ import io.cucumber.java.en.When;
  * @project java-cucumber-learning
  */
 public class CommonStep {
-
     @Given("navigate to url {string}")
-    public void navigate_to_url(String url) {
-        Keyword.navigateToUrl(url); }
+    public void navigateToUrl(String url) {
+        Keyword.navigateToUrl(url);
+    }
 
     @When("login as {string}")
-    public void login_as(String string) {
+    public void loginAs(String string) {
+        String userEmail = "binarqae1@gmail.com";
+        String password = "students1234";
+
         LoginPage loginPage = new LoginPage(DriverManager.getInstance().getDriver());
-        loginPage.enterCredential("raushanfiqriarya@gmail.com", "Password*1");
+        loginPage.userLogin(userEmail, password);
     }
 
     @Then("current url should be {string}")
-    public void current_url_should_be(String expectedUrl) {
-        Keyword.assertCurrentUrl(expectedUrl);
+    public void currentUrlShouldBe(String url) {
+        Keyword.assertCurrentUrl(url);
     }
-
 }
