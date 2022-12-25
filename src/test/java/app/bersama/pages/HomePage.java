@@ -16,7 +16,10 @@ public class HomePage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @FindBy(id = "//*[@id=\"navbarText\"]/ul/li/a")
-    private WebElement navLinkLogin;
+    @FindBy(xpath = "//*[@id=\"navbarText\"]/ul/li/a")
+    public static WebElement navLinkLogin;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/a")
+    public static WebElement navLinkJual;
 
 }
