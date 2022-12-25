@@ -14,7 +14,7 @@ public class SellListPage {
 
     public SellListPage(WebDriver driver) {
         this.webDriver = driver;
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         PageFactory.initElements(webDriver, this);
     }
 
