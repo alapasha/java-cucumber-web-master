@@ -11,9 +11,9 @@ import java.util.random.RandomGenerator;
 
 public class ProfileStep {
 
-    String name = RandomGenerator.getRandomUserName();
-    String address = RandomGenerator.getRandomAddress();
-    String phoneNumber = RandomGenerator.getRandomPhoneNumber();
+    String name = app.bersama.RandomGenerator.getRandomUserName();
+    String address = app.bersama.RandomGenerator.getRandomAddress();
+    String phoneNumber = app.bersama.RandomGenerator.getRandomPhoneNumber();
 
     @When("user navigate to profile page {string}")
     public void user_navigate_to_profile_page() {
@@ -25,7 +25,6 @@ public class ProfileStep {
     public void fillout_profile_information(String string) {
         ProfilePage profilePage = new ProfilePage(DriverManager.getInstance().getDriver());
         profilePage.enterData(name,address,phoneNumber);
-        profilePage.tapButtonRegister();
     }
 
     @Then("user successfully change account information")

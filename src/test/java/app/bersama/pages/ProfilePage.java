@@ -1,5 +1,6 @@
 package app.bersama.pages;
 
+import app.bersama.Keyword;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -20,8 +21,8 @@ public class ProfilePage {
     @FindBy (id = "nm_produk")
     private WebElement input_name;
 
-    @FindBy (id = "kota")
-    private WebElement button_city;
+    @FindBy (xpath = "//*[@id=\"kota\"]/option[7]")
+    private WebElement option_city;
 
     @FindBy (id = "deskripsi")
     private WebElement input_address;
@@ -36,10 +37,8 @@ public class ProfilePage {
         input_name.sendKeys(name);
         input_address.sendKeys(address);
         input_phoneNumber.sendKeys(phoneNumber);
+        Keyword.click(button_submit);
 
-    }
-    public void tapButtonRegister(){
-        button_submit.click();
     }
 
 }
