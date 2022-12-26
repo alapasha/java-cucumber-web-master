@@ -31,6 +31,9 @@ public class HomePage {
     @FindBy(xpath = "/html/body/div/div/nav/div/div/div/ul/li[3]/div/button")
     private WebElement button_logout;
 
+    @FindBy(xpath = "/html/body/div/div/nav/div/div/div/ul/li[1]/a")
+    private WebElement navLinkSellList;
+
     public void userProfile() {
 
         Keyword.click(button_user);
@@ -41,5 +44,9 @@ public class HomePage {
 
         Keyword.click(button_user);
         Keyword.click(button_logout);
+    }
+
+    public void setNavLinkSellList() {
+        Keyword.click(navLinkSellList);
     }
 }
