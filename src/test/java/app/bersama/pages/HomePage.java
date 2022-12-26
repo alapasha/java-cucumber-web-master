@@ -28,7 +28,7 @@ public class HomePage {
     @FindBy(xpath = "//*[@id=\"navbarText\"]/ul/li[3]/div/a")
     private WebElement button_profile;
 
-    @FindBy(xpath = "//*[@id=\"navbarText\"]/ul/li[3]/div/button")
+    @FindBy(xpath = "/html/body/div/div/nav/div/div/div/ul/li[3]/div/button")
     private WebElement button_logout;
 
     public void userProfile() {
