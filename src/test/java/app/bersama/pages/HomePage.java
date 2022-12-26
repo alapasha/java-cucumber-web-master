@@ -32,13 +32,13 @@ public class HomePage {
     private WebElement button_logout;
 
     public void userProfile() {
-        Keyword.waitElementToBeDisplayed(button_user);
+
         Keyword.click(button_user);
         Keyword.click(button_profile);
     }
 
     public void userLogout() {
-        Keyword.waitElementToBeDisplayed(button_user);
+
         Keyword.click(button_user);
         Keyword.click(button_logout);
     }
