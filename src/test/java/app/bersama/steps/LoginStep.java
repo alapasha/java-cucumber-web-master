@@ -10,20 +10,22 @@ import io.cucumber.java.en.When;
 public class LoginStep {
 
     @When("login as invalid_user {string}")
-        public void login_as_invalid_user(String string) {
+    public void login_as_invalid_user(String string) {
         String userEmail = "invaliduser@gmail.com";
         String password = "aaaa";
 
+        LoginPage loginPage = new LoginPage(DriverManager.getInstance().getDriver());
+        loginPage.userLogin(userEmail, password);
     }
-
     @When("user landed to login page {string}")
     public void currentUrlShouldBe(String url) {
         Keyword.assertCurrentUrl(url);
     }
 
-//    @Then("user verify error message with value {string}")
-//    public void userVerifyErrorMessageWithValue(String value) {
-//        new LoginPage(DriverManager.getInstance().getDriver()).
-//                verifyErrorMessage(value);
+    @Then("user verify error message with value {string}")
+    public void userVerifyErrorMessageWithValue(String message) {
+        new LoginPage(DriverManager.getInstance().getDriver()).
+                verifyErrorMessage(message);
     }
+}
 
