@@ -37,7 +37,7 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 
     @BeforeMethod
     public void setupBrowser() {
-        WebDriver webDriver = new BrowserFactory().launchBrowser("headless chrome");
+        WebDriver webDriver = new BrowserFactory().launchBrowser("chrome");
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         DriverManager.getInstance().setDriver(webDriver);
@@ -45,6 +45,6 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 
     @AfterMethod
     public void teardownBrowser() {
-        DriverManager.getInstance().getDriver().close();
+        DriverManager.getInstance().getDriver();
     }
 }
