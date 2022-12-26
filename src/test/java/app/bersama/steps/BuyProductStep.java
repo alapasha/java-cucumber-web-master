@@ -9,9 +9,11 @@ import io.cucumber.java.en.When;
 
 public class BuyProductStep {
 
-        @Given("user want to buy product {string}")
-        public void user_want_to_buy_product(String url) {
-                Keyword.navigateToUrl(url);
+
+        @Given("user want to buy product")
+        public void user_want_to_buy_product() {
+                BuyProductPage buyProductPage = new BuyProductPage(DriverManager.getInstance().getDriver());
+                buyProductPage.clickProduct();
         }
 
         @When("user click interested and nego button")
@@ -22,9 +24,9 @@ public class BuyProductStep {
                 buyProductPage.clickSend();
         }
 
-        @Then("pop up message should be appear with value {string}")
-        public void pop_up_message_should_be_appear_with_value(String message) {
+        @Then("pop up message should be appear")
+        public void pop_up_message_should_be_appear() {
                 BuyProductPage buyProductPage = new BuyProductPage(DriverManager.getInstance().getDriver());
-                buyProductPage.verifySuccessBid(message);
+                buyProductPage.verifySuccessBid();
         }
 }

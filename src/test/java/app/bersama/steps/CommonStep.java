@@ -19,8 +19,8 @@ public class CommonStep {
 
     @When("login as {string}")
     public void loginAs(String string) {
-        String userEmail = "binarqae1@gmail.com";
-        String password = "students1234";
+        String userEmail = "kopi.lintau@gmail.com";
+        String password = "Qwerty123";
 
         LoginPage loginPage = new LoginPage(DriverManager.getInstance().getDriver());
         loginPage.userLogin(userEmail, password);
@@ -29,5 +29,10 @@ public class CommonStep {
     @Then("current url should be {string}")
     public void currentUrlShouldBe(String url) {
         Keyword.assertCurrentUrl(url);
+    }
+
+    @Then("user take screenshot full page with name {string}")
+    public void userTakeScreenshotFullPageWithName(String fileName) {
+        Keyword.takeScreenshot(fileName);
     }
 }

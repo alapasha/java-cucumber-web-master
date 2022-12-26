@@ -4,7 +4,7 @@ Feature: Login
   @login @positive
   Scenario: As a user i should be able to login
     Given navigate to url "https://secondhand-store.herokuapp.com/login"
-    When login as "binarqae1@gmail.com"
+    When login as "kopi.lintau@gmail.com"
     Then current url should be "https://secondhand-store.herokuapp.com/login"
 
 #  @logout @positive
