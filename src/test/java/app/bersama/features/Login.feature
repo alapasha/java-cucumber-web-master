@@ -10,20 +10,32 @@ Feature: Login
 #  @logout @positive
 #  Scenario: As a user i should be able to login and logout
 #    Given navigate to url "https://secondhand-store.herokuapp.com/login"
-#    When login with valid credential
-#    Then current url should be "https://secondhand-store.herokuapp.com/"
+#    When login as "binarqae1@gmail.com"
+#    Then current url should be "https://secondhand-store.herokuapp.com/login"
 #    * user logout
 #
-#  @login @negative
-#    Scenario Outline: As a user i should not be able to login because credential is not valid
-#      Given navigate to url "https://www.saucedemo.com/"
-#      When login as "invalid_user"
-#      Then user verify error message with value "<errorMessage>"
+  @login @negative
+    Scenario Outline: As a user i should not be able to login because credential is not valid
+      Given navigate to url "https://secondhand-store.herokuapp.com/login"
+      When login as invalid_user "invalid_user"
+      Then user verify error message with value "<errorMessage>"
 #      * user take screenshot full page with name "negative_login_001"
+
+    Examples:
+      | errorMessage         |
+      | Akun tidak ditemukan |
+
+  @login @negative
+  Scenario Outline: As a user i should not be able to login because password is wrong
+    Given navigate to url "https://secondhand-store.herokuapp.com/login"
+    When login as wrong password user "wrong_password_user"
+    Then user get error message "<errorMessage>"
+#      * user take screenshot full page with name "negative_login_001"
+
+    Examples:
+      | errorMessage  |
+      | Password anda salah!|
 #
-#    Examples:
-#        | errorMessage                                                              |
-#        | Epic sadface: Username and password do not match any user in this service |
 #
 #  @login @positive
 #    Scenario: User should be able to open About Page

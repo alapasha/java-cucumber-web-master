@@ -17,17 +17,29 @@ public class HomePage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @FindBy(xpath = "//*[@id=\"navbarText\"]/ul/li/a")
+    @FindBy(id = "//*[@id=\"navbarText\"]/ul/li/a")
     private WebElement navLinkLogin;
 
-    public void setNavLinkLogin() {
-        Keyword.click(navLinkLogin);
+
+    //Profile & Logout
+    @FindBy(id = "user")
+    private WebElement button_user;
+
+    @FindBy(xpath = "//*[@id=\"navbarText\"]/ul/li[3]/div/a")
+    private WebElement button_profile;
+
+    @FindBy(xpath = "//*[@id=\"navbarText\"]/ul/li[3]/div/button")
+    private WebElement button_logout;
+
+    public void userProfile() {
+
+        Keyword.click(button_user);
+        Keyword.click(button_profile);
     }
 
-    @FindBy(xpath = "//*[@id=\"navbarText\"]/ul/li[1]/a")
-    private WebElement navLinkSellList;
+    public void userLogout() {
 
-    public void setNavLinkSellList() {
-        Keyword.click(navLinkSellList);
+        Keyword.click(button_user);
+        Keyword.click(button_logout);
     }
 }
