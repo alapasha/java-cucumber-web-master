@@ -8,9 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
-import static app.bersama.pages.HomePage.navLinkJual;
-import static app.bersama.pages.HomePage.navLinkSellList;
-import static app.bersama.pages.SellListPage.buttonAddNewItem;
 
 public class ProductInfoPage {
     protected WebDriver webDriver;
@@ -27,18 +24,21 @@ public class ProductInfoPage {
     @FindBy(id = "harga_produk")
     private WebElement inputProductPrice;
 
-    @FindBy(xpath = "//*[@id=\"kategori\"]/option[3]")
+    @FindBy(xpath = "//*[@id=\"kategori\"]/option[2]")
     private WebElement chooseProductCategory;
 
     @FindBy(id = "deskripsi")
     private WebElement inputProductDescription;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/form/div[6]/div[2]/button")
+    @FindBy(xpath = "/html/body/div/div/div/div/form/div[6]/div[2]/button")
     private WebElement buttonPublish;
 
+    @FindBy(xpath = "/html/body/div/div/a")
+    private  WebElement navLinkJual;
+
     public void addNewItem(){
-        Keyword.click(navLinkSellList);
-        Keyword.click(buttonAddNewItem);
+        Keyword.waitElementToBeDisplayed(navLinkJual);
+        Keyword.click(navLinkJual);
     }
 
     public void fillInformationForm(String productName, String productPrice, String productDescription) {
@@ -46,5 +46,6 @@ public class ProductInfoPage {
         Keyword.enterText(inputProductPrice, productPrice);
         Keyword.click(chooseProductCategory);
         Keyword.enterText(inputProductDescription, productDescription);
+        Keyword.click(buttonPublish);
     }
 }

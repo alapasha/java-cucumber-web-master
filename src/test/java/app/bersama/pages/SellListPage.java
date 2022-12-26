@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.time.Duration;
 
-import static app.bersama.pages.HomePage.navLinkSellList;
+
 
 public class SellListPage {
 
@@ -23,15 +23,33 @@ public class SellListPage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[3]/div[2]/div/div[2]/div/div[1]")
     private WebElement item1;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[3]/div[1]/div/div/button[1]")
+    @FindBy(xpath = "/html/body/div/div/div/div/div[3]/div[1]/div/div/button[1]")
     private WebElement buttonDelete;
 
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[3]/div[2]/div/div/a")
-    public static WebElement buttonAddNewItem;
+    private WebElement buttonAddNewItem;
+
+    @FindBy(xpath = "/html/body/div/div/div/div[1]/h4")
+    private WebElement stringDaftarJual;
+
+    @FindBy(xpath = "/html/body/div/div/div/div/div[3]/div[1]/div/div/button[2]")
+    private WebElement editButton;
+
+    @FindBy(id = "banner")
+    private WebElement homeBanner;
 
     public void deleteItem(){
-        Keyword.click(navLinkSellList);
         Keyword.click(item1);
+        Keyword.validateElementIsVisibleAndEnabled(editButton);
         Keyword.click(buttonDelete);
     }
+
+    public void stringDaftarJual(){
+        Keyword.validateElementIsVisibleAndEnabled(stringDaftarJual);
+    }
+
+    public void verifyHomeBanner() {
+        Keyword.waitElementToBeDisplayed(homeBanner);
+    }
+
 }

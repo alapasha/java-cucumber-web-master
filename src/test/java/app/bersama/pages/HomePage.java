@@ -1,5 +1,6 @@
 package app.bersama.pages;
 
+import app.bersama.Keyword;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,11 +18,16 @@ public class HomePage {
     }
 
     @FindBy(xpath = "//*[@id=\"navbarText\"]/ul/li/a")
-    public static WebElement navLinkLogin;
+    private WebElement navLinkLogin;
 
-    @FindBy(className = "btn btn-color-theme pl-3 pr-3 button-jual")
-    public static WebElement navLinkJual;
+    public void setNavLinkLogin() {
+        Keyword.click(navLinkLogin);
+    }
 
     @FindBy(xpath = "//*[@id=\"navbarText\"]/ul/li[1]/a")
-    public static WebElement navLinkSellList;
+    private WebElement navLinkSellList;
+
+    public void setNavLinkSellList() {
+        Keyword.click(navLinkSellList);
+    }
 }

@@ -5,5 +5,6 @@
   Scenario: As a user i should be able to add new product
     Given navigate to url "https://secondhand-store.herokuapp.com/login"
     * login as "kelompok1regie@gmail.com"
+    When user click my sell list button
     When delete product
-    Then current url should be "https://secondhand-store.herokuapp.com"
+    Then user return to homepage
