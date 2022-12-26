@@ -1,11 +1,11 @@
 @login
 Feature: Login
 
-#  @login @positive
-#  Scenario: As a user i should be able to login
-#    Given navigate to url "https://secondhand-store.herokuapp.com/login"
-#    When login as "binarqae1@gmail.com"
-#    Then current url should be "https://secondhand-store.herokuapp.com/login"
+  @login @positive
+  Scenario: As a user i should be able to login
+    Given navigate to url "https://secondhand-store.herokuapp.com/login"
+    When login as "binarqae1@gmail.com"
+    Then current url should be "https://secondhand-store.herokuapp.com/login"
 
 #  @logout @positive
 #  Scenario: As a user i should be able to login and logout
@@ -24,6 +24,18 @@ Feature: Login
     Examples:
       | errorMessage         |
       | Akun tidak ditemukan |
+
+  @login @negative
+  Scenario Outline: As a user i should not be able to login because password is wrong
+    Given navigate to url "https://secondhand-store.herokuapp.com/login"
+    When login as wrong password user "wrong_password_user"
+    Then user get error message "<errorMessage>"
+#      * user take screenshot full page with name "negative_login_001"
+
+    Examples:
+      | errorMessage  |
+      | Password anda salah!|
+#
 #
 #  @login @positive
 #    Scenario: User should be able to open About Page

@@ -17,6 +17,16 @@ public class LoginStep {
         LoginPage loginPage = new LoginPage(DriverManager.getInstance().getDriver());
         loginPage.userLogin(userEmail, password);
     }
+
+    @When("login as wrong password user {string}")
+    public void login_as_wrong_password_user(String string) {
+        String userEmail = "raushanfiqriarya@gmail.com";
+        String password = "abcdefgh";
+
+        LoginPage loginPage = new LoginPage(DriverManager.getInstance().getDriver());
+        loginPage.userLogin(userEmail, password);
+    }
+
     @When("user landed to login page {string}")
     public void currentUrlShouldBe(String url) {
         Keyword.assertCurrentUrl(url);
@@ -24,6 +34,11 @@ public class LoginStep {
 
     @Then("user verify error message with value {string}")
     public void userVerifyErrorMessageWithValue(String message) {
+        new LoginPage(DriverManager.getInstance().getDriver()).
+                verifyErrorMessage(message); }
+
+    @Then("user get error message {string}")
+    public void user_get_error_message(String message) {
         new LoginPage(DriverManager.getInstance().getDriver()).
                 verifyErrorMessage(message);
     }
