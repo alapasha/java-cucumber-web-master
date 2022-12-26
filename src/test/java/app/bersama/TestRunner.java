@@ -18,7 +18,7 @@ import java.time.Duration;
  * @project java-cucumber-learning
  */
 
-@CucumberOptions(features = "src/test/java/app/bersama/features/Delete-Product.feature",
+@CucumberOptions(features = "src/test/java/app/bersama/features",
         glue = "app.bersama.steps",
         tags = "",
         plugin = {
@@ -45,6 +45,6 @@ public class TestRunner extends AbstractTestNGCucumberTests {
 
     @AfterMethod
     public void teardownBrowser() {
-        DriverManager.getInstance().getDriver();
+        DriverManager.getInstance().getDriver().close();
     }
 }
