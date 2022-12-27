@@ -42,11 +42,12 @@ public class InfoPenawarPage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]")
     private WebElement message_decline;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[2]/div[2]/div[2]/div/button[1]")
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div[2]/div[2]/div/button[1]")
     private WebElement button_status;
+    //*[@id="root"]/div/div/div/div[2]/div[2]/div[2]/div[2]/div/button[1]
 
     @FindBy(xpath = "/html/body/div[3]/div/div/div[2]/form/div[1]/input")
-    private WebElement thick_berhasilTerjaul;
+    private WebElement thick_berhasilTerjual;
 
     @FindBy(xpath = "/html/body/div[3]/div/div/div[2]/form/div[2]/input")
     private WebElement thick_batalkanTransaksi;
@@ -61,6 +62,17 @@ public class InfoPenawarPage {
     public void acceptOfferPrice(){
         Keyword.click(button_accept);
     }
+
+    public void updateSoldStatus(){
+        Keyword.click(button_status);
+        Keyword.click(thick_berhasilTerjual);
+        Keyword.click(button_kirim);
+    }
+
+    public void verifyAllertUpdateStatusSold(){
+        Keyword.validateElementIsVisibleAndEnabled(message_success);
+    }
+
 
     public void verifyAllertSuccess(){
         Keyword.validateElementIsVisibleAndEnabled(message_accepted);
