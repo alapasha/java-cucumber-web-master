@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import java.security.Key;
 import java.time.Duration;
 
 public class InfoPenawarPage {
@@ -37,6 +38,10 @@ public class InfoPenawarPage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]")
     private WebElement message_accepted;
 
+    //allert status "Tawaran produk ditolak"
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]")
+    private WebElement message_decline;
+
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[1]/div[2]/div[2]/div[2]/div[2]/div/button[1]")
     private WebElement button_status;
 
@@ -57,7 +62,16 @@ public class InfoPenawarPage {
         Keyword.click(button_accept);
     }
 
-    public void verifyAlertSuccess(){
+    public void verifyAllertSuccess(){
         Keyword.validateElementIsVisibleAndEnabled(message_accepted);
+    }
+
+    public void declineOfferPrice(){
+        Keyword.click(button_reject);
+        Keyword.click(button_yes);
+    }
+
+    public void verifyAllertDecline(){
+        Keyword.validateElementIsVisibleAndEnabled(message_decline);
     }
 }

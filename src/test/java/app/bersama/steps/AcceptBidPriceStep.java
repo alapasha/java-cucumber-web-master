@@ -22,6 +22,6 @@ public class AcceptBidPriceStep {
     @Then("seller get allert message")
     public void seller_get_allert_message() {
         InfoPenawarPage infoPenawarPage = new InfoPenawarPage(DriverManager.getInstance().getDriver());
-        infoPenawarPage.verifyAlertSuccess();
+        infoPenawarPage.verifyAllertSuccess();
     }
 }
