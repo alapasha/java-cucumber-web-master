@@ -8,4 +8,4 @@ Feature: Buy Product
     * user want to buy product
     When user click interested and nego button
     Then pop up message should be appear
-    * user take screenshot full page with name "Buy Product"
+#    * user take screenshot full page with name "Buy Product"

@@ -8,4 +8,4 @@
       Given seller direct to daftar jual page
       When seller accepted the bid price
       Then seller get allert message
-      Then user take screenshot full page with name "Accept Bid Price"
+#      Then user take screenshot full page with name "Accept Bid Price"
