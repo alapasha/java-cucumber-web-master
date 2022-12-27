@@ -18,6 +18,8 @@ public class BuyProductPage {
         PageFactory.initElements(webDriver, this);
     }
 
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/div[2]/div[5]")
+    private WebElement click_product;
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[3]/div[1]/div/div/button")
     private WebElement button_interest;
 
@@ -27,9 +29,13 @@ public class BuyProductPage {
     @FindBy(xpath = "/html/body/div[3]/div/div/div[3]/button")
     private WebElement button_send;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]")
+    //message "Harga tawarmu berhasil dikirim ke penjual"
+    @FindBy(xpath = "/html/body/div/div/div/div[2]")
     private WebElement allert_success;
 
+    public void clickProduct(){
+        Keyword.click(click_product);
+    }
     public void clickInterest(){
         Keyword.click(button_interest);
     }
@@ -41,8 +47,7 @@ public class BuyProductPage {
         Keyword.click(button_send);
     }
 
-    public void verifySuccessBid(String message){
-        Assert.assertTrue(allert_success.isDisplayed());
-        Assert.assertEquals(allert_success.getText(),message);
+    public void verifySuccessBid(){
+        Keyword.validateElementIsVisibleAndEnabled(allert_success);
     }
 }
