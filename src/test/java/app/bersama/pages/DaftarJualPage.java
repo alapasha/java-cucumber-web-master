@@ -24,7 +24,7 @@ public class DaftarJualPage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[3]/div[1]/div/div/div/button[2]")
     private WebElement button_Diminati;
 
-    @FindBy(xpath = "/html/body/div/div/div/div[3]/div[2]/div/div[2]/div")
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[3]/div[2]/div/div/div")
     private WebElement choose_product;
 
     public void updateProductOffer(){
