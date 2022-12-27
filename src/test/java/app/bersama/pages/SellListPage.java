@@ -20,7 +20,7 @@ public class SellListPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @FindBy(xpath = "/html/body/div/div/div/div[3]/div[2]/div/div[3]")
+    @FindBy(xpath = "/html/body/div/div/div/div[3]/div[2]/div/div[2]")
     private WebElement item1;
 
     @FindBy(xpath = "/html/body/div/div/div/div/div[3]/div[1]/div/div/button[1]")
