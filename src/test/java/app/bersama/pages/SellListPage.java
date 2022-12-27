@@ -41,7 +41,6 @@ public class SellListPage {
     public void deleteItem(){
         Keyword.click(item1);
         Keyword.validateElementIsVisibleAndEnabled(editButton);
-        Keyword.waitElementToBeDisplayed(buttonDelete);
         Keyword.click(buttonDelete);
     }
 
