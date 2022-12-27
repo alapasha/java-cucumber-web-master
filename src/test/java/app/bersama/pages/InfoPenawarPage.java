@@ -42,9 +42,8 @@ public class InfoPenawarPage {
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]")
     private WebElement message_decline;
 
-    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div/div[2]/div[2]/div[2]/div[2]/div/button[1]")
+    @FindBy(xpath = "//button[text()='Status']")
     private WebElement button_status;
-    //*[@id="root"]/div/div/div/div[2]/div[2]/div[2]/div[2]/div/button[1]
 
     @FindBy(xpath = "/html/body/div[3]/div/div/div[2]/form/div[1]/input")
     private WebElement thick_berhasilTerjual;
@@ -54,6 +53,7 @@ public class InfoPenawarPage {
 
     @FindBy(xpath = "/html/body/div[3]/div/div/div[3]/button")
     private WebElement button_kirim;
+
 
     //allert success Status produk berhasil diperbarui
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[3]")

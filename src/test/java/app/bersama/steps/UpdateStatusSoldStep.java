@@ -11,9 +11,9 @@ public class UpdateStatusSoldStep {
         infoPenawarPage.updateSoldStatus();
     }
 
-//    @Then("seller get allert success updated status product")
-//    public void seller_get_allert_success_updated_status_product() {
-//        InfoPenawarPage infoPenawarPage = new InfoPenawarPage(DriverManager.getInstance().getDriver());
-//        infoPenawarPage.verifyAllertUpdateStatusSold();
-//    }
+    @Then("seller get allert success updated status product")
+    public void seller_get_allert_success_updated_status_product() {
+        InfoPenawarPage infoPenawarPage = new InfoPenawarPage(DriverManager.getInstance().getDriver());
+        infoPenawarPage.verifyAllertUpdateStatusSold();
+    }
 }
