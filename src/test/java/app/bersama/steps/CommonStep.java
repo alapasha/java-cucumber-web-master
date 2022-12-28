@@ -2,6 +2,7 @@ package app.bersama.steps;
 
 import app.bersama.DriverManager;
 import app.bersama.Keyword;
+import app.bersama.pages.HomePage;
 import app.bersama.pages.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,6 +16,8 @@ public class CommonStep {
     @Given("navigate to url {string}")
     public void navigateToUrl(String url) {
         Keyword.navigateToUrl(url);
+        HomePage homePage = new HomePage(DriverManager.getInstance().getDriver());
+        homePage.clickNavilogin();
     }
 
     @When("login as {string}")

@@ -1,5 +1,6 @@
 package app.bersama.pages;
 
+import app.bersama.Keyword;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,7 +17,12 @@ public class HomePage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @FindBy(id = "//*[@id=\"navbarText\"]/ul/li/a")
+    @FindBy(xpath = "//*[@id=\"navbarText\"]/ul/li/a")
     private WebElement navLinkLogin;
+
+
+    public void clickNavilogin(){
+        Keyword.click(navLinkLogin);
+    }
 
 }
