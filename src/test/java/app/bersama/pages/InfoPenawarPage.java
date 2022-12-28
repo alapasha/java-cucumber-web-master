@@ -69,6 +69,12 @@ public class InfoPenawarPage {
         Keyword.click(button_kirim);
     }
 
+    public void updateCancelStatus(){
+        Keyword.click(button_status);
+        Keyword.click(thick_batalkanTransaksi);
+        Keyword.click(button_kirim);
+    }
+
     public void verifyAllertUpdateStatusSold(){
         Keyword.validateElementIsVisibleAndEnabled(message_success);
     }
