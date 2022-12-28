@@ -14,7 +14,7 @@ import java.time.Duration;
  * @project java-cucumber-learning
  */
 
-@CucumberOptions(features = "src/test/java/app/bersama/features/UpdateStatusCancel.feature",
+@CucumberOptions(features = "src/test/java/app/bersama/features",
         glue = "app.bersama.steps",
         tags = "",
         plugin = {
