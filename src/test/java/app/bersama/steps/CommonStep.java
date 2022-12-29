@@ -16,6 +16,8 @@ public class CommonStep {
     @Given("navigate to url {string}")
     public void navigateToUrl(String url) {
         Keyword.navigateToUrl(url);
+        HomePage homePage = new HomePage(DriverManager.getInstance().getDriver());
+        homePage.clickNavlinkLogin();
     }
 
     @When("login as {string}")
