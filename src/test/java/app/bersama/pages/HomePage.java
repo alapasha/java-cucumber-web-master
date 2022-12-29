@@ -17,7 +17,7 @@ public class HomePage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @FindBy(id = "//*[@id=\"navbarText\"]/ul/li/a")
+    @FindBy(id = "navbarText")
     private WebElement navLinkLogin;
 
 
@@ -49,4 +49,6 @@ public class HomePage {
     public void setNavLinkSellList() {
         Keyword.click(navLinkSellList);
     }
+
+    public void clickNavlinkLogin() {Keyword.click((navLinkLogin));}
 }

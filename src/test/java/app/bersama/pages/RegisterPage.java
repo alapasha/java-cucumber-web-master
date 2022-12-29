@@ -1,5 +1,6 @@
 package app.bersama.pages;
 
+import app.bersama.DriverManager;
 import app.bersama.Keyword;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,13 +20,13 @@ public class RegisterPage {
         PageFactory.initElements(webDriver, this);
     }
 
-    @FindBy(xpath = "//*[@id=\"inputAddress\"]")
+    @FindBy(xpath = "/html/body/div/div/div/div[2]/form/div[1]/input")
     private WebElement inputNama;
 
-    @FindBy(xpath = "//*[@id=\"exampleInputEmail1\"]")
+    @FindBy(xpath = "/html/body/div/div/div/div[2]/form/div[2]/input")
     private WebElement inputEmail;
 
-    @FindBy(xpath = "//*[@id=\"exampleInputPassword1 \"] ")
+    @FindBy(xpath = "/html/body/div/div/div/div[2]/form/div[3]/input")
     private  WebElement inputPassword;
 
     @FindBy(xpath = "/html/body/div/div/div/div[2]/form/button")
