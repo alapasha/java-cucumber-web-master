@@ -27,7 +27,7 @@ public class LoginPage {
     @FindBy(id = "exampleInputEmail1")
     private WebElement inputEmail;
 
-    @FindBy(xpath = "//*[@id=\"exampleInputPassword1 \"] ")
+    @FindBy(xpath = "//*[@id=\"exampleInputPassword1 \"]")
     private  WebElement inputPassword;
 
     @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[2]/form/button")
